@@ -1,27 +1,22 @@
+// Modules
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 // Components
-import logo from '../Assets/logo.svg';
+import HomeScreen from '../screens/home-screen/home-screen';
 
 // Styles
 import './styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeScreen />}>
+          <Route path="expenses" />
+          <Route path="invoices" />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
