@@ -1,68 +1,78 @@
 // Modules
-import Carousel from 'react-bootstrap/Carousel';
 import styled from 'styled-components';
 
-// Images
-import SneakerImage from '../../Assets/banner-website-pattern-white-sneakers-minimalism-stylish-shoes-199406505.jpg';
-import SneakerImage1 from '../../Assets/SELF_sneakers-lede.webp';
-import SneakerImage2 from '../../Assets/unlaced_nike_grey_sneakers.png';
+// Components
+import SneakersCarousel from '../../Components/carousel';
+
+// Mock
+import { cardArray } from '../../Constants/mockProductCard';
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './home-screen.css';
 
 function HomeScreen() {
-  // Mock while backend not ready yet
-  // const imageArray = [
-  //   {
-  //     imagePath:
-  //       '../Assets/banner-website-pattern-white-sneakers-minimalism-stylish-shoes-199406505.jpg',
-  //   },
-  //   {
-  //     imagePath: '../Assets/SELF_sneakers-lede.webp',
-  //   },
-  //   {
-  //     imagePath: '../unlaced_nike_grey_sneakers.png',
-  //   },
-  // ];
   return (
-    <CarouselContainer>
-      <Carousel>
-        {/* {imageArray.map((item, index) => {
-          return (
-            <Carousel.Item key={index}>
-              <div>
-                <img src={item.imagePath} alt="test" />
-              </div>
-            </Carousel.Item>
-          );
-        })} */}
-        <Carousel.Item>
-          <div>
-            <Image src={SneakerImage} alt="test" />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div>
-            <Image src={SneakerImage1} alt="test" />
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div>
-            <Image src={SneakerImage2} alt="test" />
-          </div>
-        </Carousel.Item>
-      </Carousel>
-    </CarouselContainer>
+    <>
+      <SneakersCarousel />
+      <Wrapper>
+        <BlockTitle>Hot offer</BlockTitle>
+        <CardBlock>
+          {cardArray.map((cardItem) => {
+            return (
+              <Card key={cardItem.id}>
+                <div>
+                  <CardImage
+                    src={
+                      cardItem.productImg ||
+                      'https://images.prom.ua/3325577832_originalnye-zhenskie-krossovki.jpg'
+                    }
+                    alt={cardItem.productName}
+                  />
+                </div>
+                <CardDescription>
+                  <p>{cardItem.productName}</p>
+                  <p>{cardItem.productCategory}</p>
+                  <p>{cardItem.productShortDescription}</p>
+                  <p>{cardItem.productPrice}</p>
+                </CardDescription>
+              </Card>
+            );
+          })}
+        </CardBlock>
+      </Wrapper>
+    </>
   );
 }
-
-const CarouselContainer = styled.div`
-  height: 100vh;
+const Wrapper = styled.div`
+  max-width: 1400px;
+  margin: auto;
+  padding-top: 125px;
+`;
+const BlockTitle = styled.h3`
+  color: #000;
+  font-size: 40px;
+  line-height: 44px;
 `;
 
-const Image = styled.img`
-  height: 40vh;
-  width: 100%;
+const CardBlock = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+`;
+
+const CardImage = styled.img`
+  max-width: 350px;
+  margin: auto;
+`;
+
+const Card = styled.div`
+  background-color: #fff;
+  justify-self: center;
+`;
+
+const CardDescription = styled.div`
+  padding-left: 20px;
+  padding-top: 20px;
 `;
 export default HomeScreen;
