@@ -1,15 +1,25 @@
 // Modules
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaUserAlt, FaShoppingBasket } from 'react-icons/fa';
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <HeaderBlock>
       <HeaderContent>
         <div>logo</div>
         <div>
-          <FaShoppingBasket />
-          <FaUserAlt />
+          <FaShoppingBasket
+            onClick={() => {
+              navigate('/basket');
+            }}
+          />
+          <FaUserAlt
+            onClick={() => {
+              navigate('/profile');
+            }}
+          />
         </div>
       </HeaderContent>
     </HeaderBlock>

@@ -14,8 +14,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomeScreen />}>
-          <Route path="expenses" />
-          <Route path="invoices" />
+          <Route path="/basket" />
+          <Route path="/profile" />
         </Route>
       </Routes>
     </BrowserRouter>
