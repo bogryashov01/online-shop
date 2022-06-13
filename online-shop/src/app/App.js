@@ -1,6 +1,7 @@
 // Modules
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from '../Components/header/header';
+import Footer from '../Components/footer';
+import Header from '../Components/header';
 
 // Components
 import HomeScreen from '../screens/home-screen/home-screen';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile" />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
