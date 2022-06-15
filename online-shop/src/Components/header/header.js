@@ -27,7 +27,7 @@ function Header() {
 }
 
 const HeaderBlock = styled.header`
-  background-color: #0073ff;
+  background-color: #1ecffb; ;
 `;
 const HeaderContent = styled.div`
   max-width: 1400px;

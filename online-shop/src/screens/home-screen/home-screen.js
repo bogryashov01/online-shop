@@ -53,6 +53,8 @@ const BlockTitle = styled.h3`
   color: #000;
   font-size: 40px;
   line-height: 44px;
+  padding-left: 50px;
+  padding-bottom: 50px;
 `;
 
 const CardBlock = styled.div`
