@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // Components
-import SideBar from '../../Components/sidebar';
+import NavBar from '../../Components/navbar';
 
 function Catalog(props) {
   const { products } = props;
@@ -10,33 +10,31 @@ function Catalog(props) {
   return (
     <>
       <CatalogBlock>
-        <SideBar />
-        <div>
-          <div>olol</div>
-          <ProductBlock>
-            {products.map((product) => {
-              return (
-                <Card key={product.id}>
-                  <div>
-                    <CardImage
-                      src={
-                        product.productImg ||
-                        'https://images.prom.ua/3325577832_originalnye-zhenskie-krossovki.jpg'
-                      }
-                      alt={product.productName}
-                    />
-                  </div>
-                  <CardDescription>
-                    <p>{product.productName}</p>
-                    <p>{product.productCategory}</p>
-                    <p>{product.productShortDescription}</p>
-                    <p>{product.productPrice}</p>
-                  </CardDescription>
-                </Card>
-              );
-            })}
-          </ProductBlock>
-        </div>
+        <NavBar />
+        <ProductBlock>
+          {products.map((product) => {
+            return (
+              <Card key={product.id}>
+                <div>
+                  <CardImage
+                    src={
+                      product.productImg ||
+                      'https://images.prom.ua/3325577832_originalnye-zhenskie-krossovki.jpg'
+                    }
+                    alt={product.productName}
+                  />
+                </div>
+                <CardDescription>
+                  <p>{product.productName}</p>
+                  <p>{product.productCategory}</p>
+                  <p>{product.productShortDescription}</p>
+                  <p>{product.productPrice}</p>
+                </CardDescription>
+              </Card>
+            );
+          })}
+        </ProductBlock>
+        ƒ
       </CatalogBlock>
     </>
   );
@@ -44,14 +42,15 @@ function Catalog(props) {
 
 const CatalogBlock = styled.div`
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 1fr;
   margin-bottom: 100px;
 `;
 
 const ProductBlock = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 50px;
+  padding-top: 100px;
 `;
 
 const CardImage = styled.img`

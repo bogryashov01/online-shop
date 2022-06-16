@@ -1,10 +1,10 @@
 // Modules
 import styled from 'styled-components';
 
-function SideBar(props) {
+function NavBar(props) {
   const { categories } = props;
   return (
-    <SideBarBlock>
+    <NavBarBlock>
       <BlockTitle>Sneakers Catalog</BlockTitle>
       <div>
         <CategoryList>
@@ -17,21 +17,32 @@ function SideBar(props) {
           })}
         </CategoryList>
       </div>
-    </SideBarBlock>
+    </NavBarBlock>
   );
 }
 
-const SideBarBlock = styled.div`
+const NavBarBlock = styled.div`
   background-color: #ffb200;
   height: 100%;
   padding-left: 20px;
 `;
 const BlockTitle = styled.h3`
   padding-top: 30px;
+  text-align: center;
+  padding-bottom: 30px;
 `;
 const CategoryList = styled.ul`
   padding-inline-start: 0px;
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: auto;
 `;
-const CategoryListItem = styled.li``;
-export default SideBar;
+const CategoryListItem = styled.li`
+  margin: 10px;
+  &:hover {
+    color: #1ecffb;
+  }
+`;
+export default NavBar;
