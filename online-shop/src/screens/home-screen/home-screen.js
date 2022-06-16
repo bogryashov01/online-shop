@@ -61,6 +61,7 @@ const CardBlock = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
+  margin-bottom: 100px;
 `;
 
 const CardImage = styled.img`

@@ -19,6 +19,13 @@ function Footer() {
             </FooterListItem>
             <FooterListItem
               onClick={() => {
+                navigate('/catalog');
+              }}
+            >
+              Catalog
+            </FooterListItem>
+            <FooterListItem
+              onClick={() => {
                 navigate('/profile');
               }}
             >
@@ -42,7 +49,6 @@ function Footer() {
 const FooterBlock = styled.div`
   background-color: #ffb200;
   height: 300px;
-  margin-top: 100px;
 `;
 const Wrapper = styled.div`
   max-width: 1400px;
