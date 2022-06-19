@@ -1,6 +1,9 @@
 // Modules
 import styled from 'styled-components';
 
+// Components
+import NavbarSearch from '../navbar-search';
+
 function NavBar(props) {
   const { categories } = props;
   return (
@@ -16,6 +19,9 @@ function NavBar(props) {
             );
           })}
         </CategoryList>
+      </div>
+      <div>
+        <NavbarSearch />
       </div>
     </NavBarBlock>
   );

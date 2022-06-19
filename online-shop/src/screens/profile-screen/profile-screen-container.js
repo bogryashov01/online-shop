@@ -1,10 +1,19 @@
+// Modules
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 // Components
 import ProfileScreen from './profile-screen';
 
-// Mock
-import { profile } from '../../Constants/mockProfile';
+// Selector
+import profileSelectors from '../../engine/profile/selectors';
 
 function ProfileScreenContainer() {
-  return <ProfileScreen profile={profile} />;
+  const dispatch = useDispatch();
+  const isLogIn = useSelector(profileSelectors.isLogIn);
+  const profile = useSelector(profileSelectors.profile);
+
+  useEffect(() => {});
+  return <ProfileScreen profile={profile} isLogIn={isLogIn} />;
 }
 export default ProfileScreenContainer;

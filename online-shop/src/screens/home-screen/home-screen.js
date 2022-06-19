@@ -11,7 +11,8 @@ import { cardArray } from '../../Constants/mockProductCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './home-screen.css';
 
-function HomeScreen() {
+function HomeScreen(props) {
+  const { navigate } = props;
   return (
     <>
       <SneakersCarousel />
@@ -20,7 +21,12 @@ function HomeScreen() {
         <CardBlock>
           {cardArray.map((cardItem) => {
             return (
-              <Card key={cardItem.id}>
+              <Card
+                key={cardItem.id}
+                onClick={() => {
+                  navigate(`/product-item/${cardItem.id}`);
+                }}
+              >
                 <div>
                   <CardImage
                     src={
