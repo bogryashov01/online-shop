@@ -12,21 +12,6 @@ const getProfileData = createAsyncThunk('/getprofileData', async () => {
   }).then((res) => res);
 });
 
-// const getFilterProduct = createAsyncThunk('/getfilterProduct', async (searchResult) => {
-//   console.log(searchResult, 'resultsearch');
-//   return new Promise((res) => {
-//     setTimeout(() => {
-//       if (searchResult == '') {
-//         return res(cardArray);
-//       } else {
-//         const result = cardArray.filter((productItem) => {
-//           return productItem.productName === searchResult;
-//         });
-//         res(result);
-//       }
-//     }, 700);
-//   }).then((res) => res);
-// });
 const profileAsyncActions = {
   getProfileData,
 };
